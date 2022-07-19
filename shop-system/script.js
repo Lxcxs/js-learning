@@ -80,18 +80,31 @@ produtos.forEach(prod => {
     const div2 = document.createElement('div');
     const link = document.createElement('a');
 
+
     link.innerHTML = 'Adicionar';
-    link.href = '#';
+    link.classList.add('addCart');
 
 
     div2.appendChild(link);
     prod.appendChild(div2).classList.add('addToCart');
-
 
     prod.addEventListener('mouseover', () => {
         div2.classList.add('active')
     })
     prod.addEventListener('mouseout', () => {
         div2.classList.remove('active')
+    })
+
+})
+
+const a = document.querySelectorAll('.addCart');
+const numCart = document.querySelector('#unid');
+let cont = 0;
+numCart.innerHTML = 0;
+
+a.forEach(x => {
+    x.addEventListener('click', () => {
+        cont += 1;
+        numCart.innerHTML = cont;
     })
 })
