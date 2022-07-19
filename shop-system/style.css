@@ -26,9 +26,10 @@ div.container {
 }
 
 .container div.box {
-    width: 250px;
-    height: 300px;
-    text-align: center;
+    padding: 1.5em;
+    width: 300px;
+    height: 350px;
+    text-align: left;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,9 +38,48 @@ div.container {
     border-radius: 1em;
     animation: openSmooth .5s ease-in-out;
 }
+div.box.active {
+    background-color: white;
+}
 .container div.box img {
     width: 10em;
+    margin-bottom: 5em;
 }
+.container div.box h1 {
+    font-size: 1em;
+    font-weight: 300;
+}
+.container div.box h2 {
+    text-align: left;
+}
+
+div.addToCart {
+    display: none;
+    width: 300px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.664);
+    border-radius: 1em;
+    position: absolute;
+    z-index: 1000;
+
+}
+div.addToCart.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.addToCart a{
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 0.5em;
+    border: 1px solid white;
+    color: white;
+    transition: all .1s ease;
+}
+div.addToCart a:hover {
+    background-color: black;
+}
+
 
 @keyframes openSmooth {
     from {
