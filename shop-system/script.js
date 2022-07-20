@@ -104,7 +104,9 @@ numCart.innerHTML = 0;
 
 a.forEach(x => {
     x.addEventListener('click', () => {
+
         cont += 1;
         numCart.innerHTML = cont;
+        
     })
 })
