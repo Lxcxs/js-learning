@@ -1,6 +1,7 @@
 async function pegaDados() {
-    const resultadoConvertido = await fetch('https://rickandmortyapi.com/api').then((res) => res.json());
-    const characters = await fetch(resultadoConvertido.characters).then((resp) => resp.json())
+    const json_data = await fetch('https://rickandmortyapi.com/api').then((res) => res.json());
+    const characters = await fetch(json_data.characters).then((resp) => resp.json());
+    console.log(characters)
 
     const container = document.querySelector('.container');
 
@@ -9,12 +10,16 @@ async function pegaDados() {
         const div = document.createElement('div');
         const h1 = document.createElement('h1');
         const h3 = document.createElement('h3');
+        const image = document.createElement('img');
 
         container.appendChild(div);
-        div.appendChild(h1);
         div.appendChild(h3);
-        h1.innerHTML = characters.results[i].name;
+        div.appendChild(h1);
+        div.appendChild(image);
+        image.src = characters.results[i].image;
         h3.innerHTML = characters.results[i].status;
+        h1.innerHTML = characters.results[i].name;
+
     }
 }
 
